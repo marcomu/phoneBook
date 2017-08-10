@@ -1,0 +1,22 @@
+{
+  "name": "phonebook",
+  "version": "1.0.0",
+  "description": "Code Challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markintosh90/phoneBook.git"
+  },
+  "author": "Marco Munoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markintosh90/phoneBook/issues"
+  },
+  "homepage": "https://github.com/markintosh90/phoneBook#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
