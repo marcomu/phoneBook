@@ -4,9 +4,14 @@ const port = 3000; // Definiendo puerto
 
 app.set('view engine', 'pug'); //Indicando usaremos template engine Pug
 
-// Definiendo primer ruta
+// Definiendo ruta home
 app.get('/', (req, res) => {
-	res.send('Code Challenge');
+	res.render('index');
+});
+
+// Definiendo ruta users
+app.get('/users', (req, res) => {
+	res.render('users');
 });
 
 //Escuchando puerto
