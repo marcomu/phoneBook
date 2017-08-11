@@ -2,15 +2,18 @@ const express = require('express');
 const app = express(); // Importando y ejecutando express
 const bodyParser = require('body-parser');
 const port = 3000; // Definiendo puerto
-const routes = require('./routes'); //Definiendo router
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.set('view engine', 'pug'); //Indicando que usaremos template engine Pug
 
-app.use(routes);
+const mainRoutes = require('./routes'); //Definiendo main router
+const userRoutes = require('./routes/users'); //Definiendo user router
+
+app.use(mainRoutes);
+app.use('/users', userRoutes);
 
 app.use((req, res, next) => {
-  const err = new Error('No existe esta pagina');
+  const err = new Error('Oh oh! No existe la ruta!');
   err.status = 404;
   next(err);
 });
