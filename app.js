@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express(); // Importando y ejecutando express
+const bodyParser = require('body-parser')
 const port = 3000; // Definiendo puerto
 
-app.set('view engine', 'pug'); //Indicando usaremos template engine Pug
+app.use(bodyParser.urlencoded({extended: false}));
+app.set('view engine', 'pug'); //Indicando que usaremos template engine Pug
 
 // Definiendo ruta home
 app.get('/', (req, res) => {
