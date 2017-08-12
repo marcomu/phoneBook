@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const db = require('./db.js');
 const port = 3000; // Definiendo puerto
 
+app.use('/static', express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.set('view engine', 'pug'); //Indicando que usaremos template engine Pug
 
