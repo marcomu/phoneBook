@@ -1,3 +1,5 @@
+'use strict'
+
 const express = require('express');
 const app = express(); // Importando y ejecutando express
 const bodyParser = require('body-parser');

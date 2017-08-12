@@ -8,6 +8,8 @@ block content
       span=contacto.name
       span=contacto.phone
       span=contacto.avatar
+      a(href='/users/'+contacto.id) Ver
+      a(href='/users/'+contacto.id+'/delete') Eliminar
   form(action='/users', method='post')
     label Nombre de usuario
       input(name='name')

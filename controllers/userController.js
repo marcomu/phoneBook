@@ -7,7 +7,7 @@ exports.list_all = (req, res) => {
 
 // Show contacto
 exports.user_detail = (req, res) => {
-	res.send('Muestra el detalle de contacto', req.params.id);
+  User.show(req, res, req.params.id);  
 }
 
 //Create contacto POST
@@ -16,11 +16,11 @@ exports.user_create_post = (req, res) => {
 }
 
 // DELETE
-exports.user_delete = function(req, res) {
-    res.send('DELETE');
+exports.user_delete_get = (req, res) => {
+  User.delete(req, res, req.params.id);
 };
 
-// UPDATE
+// DETAIL
 exports.user_update = function(req, res) {
     res.send('UPDATE CONTACT');
 };
