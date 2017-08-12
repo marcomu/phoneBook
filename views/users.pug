@@ -1,7 +1,18 @@
 extends layout.pug
 
 block content
-    if message
-        h4 #{message}
-    h1 Lista de todo el directorio
-    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ullam temporibus vitae, dignissimos. Ratione aliquam provident, mollitia dolorem accusantium error sapiente voluptas ea rem maxime pariatur libero repellendus velit numquam!
+  h1 Lista de todo el directorio
+  each contacto in usuarios
+    div
+      span=contacto.id
+      span=contacto.name
+      span=contacto.phone
+      span=contacto.avatar
+  form(action='/users', method='post')
+    label Nombre de usuario
+      input(name='name')
+    label Telefono
+      input(name='phone')
+    label Avatar
+      input(type='file' name='avatar')
+    button(type='submit') Crear contacto

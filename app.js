@@ -25,16 +25,6 @@ app.use((err, req, res, next)=>{
 	res.render('error');
 });
 
-
-db.connect( (error) => {
-  if (error) {
-    console.log('No se puede conectar aMySQL.');
-    process.exit(1);
-  } else {
-    //Escuchando puerto
-    app.listen(port, () => {
-      console.log('Escuchando en puerto: ', port);
-    });
-  }
+app.listen(port, () => {
+  console.log('Escuchando en puerto: ', port);
 });
-
