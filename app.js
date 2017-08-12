@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express(); // Importando y ejecutando express
 const bodyParser = require('body-parser');
+const db = require('./db.js');
 const port = 3000; // Definiendo puerto
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -18,7 +19,6 @@ app.use((req, res, next) => {
   next(err);
 });
 
-//
 app.use((err, req, res, next)=>{
 	res.locals.error = err;
 	res.status(err.status);
@@ -26,7 +26,15 @@ app.use((err, req, res, next)=>{
 });
 
 
-//Escuchando puerto
-app.listen(port, () => {
-	console.log('Escuchando en puerto: ', port);
+db.connect( (error) => {
+  if (error) {
+    console.log('No se puede conectar aMySQL.');
+    process.exit(1);
+  } else {
+    //Escuchando puerto
+    app.listen(port, () => {
+      console.log('Escuchando en puerto: ', port);
+    });
+  }
 });
+

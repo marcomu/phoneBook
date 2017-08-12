@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
 
 // Definiendo ruta users
 router.post('/', (req, res) => {
-  res.json(req.body);
+  re
+  res.render('users');
 });
 
 module.exports = router;
