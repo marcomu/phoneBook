@@ -1,2 +1,8 @@
 node_modules
 .idea/
+public
+lib/js/**.map
+lib/js/**min*
+lib/stylesheets/**.map
+lib/stylesheets/**min*
+

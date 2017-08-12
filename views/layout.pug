@@ -1,8 +1,10 @@
 doctype html
 html(lang='en')
-	head
-		title Code Challenge
-	body
-		include includes/header.pug
-		block content
-		include includes/footer.pug
+  head
+    title Code Challenge
+    link(rel='stylesheet' href='static/lib/stylesheets/main.css')
+  body
+    include includes/header.pug
+    block content
+    include includes/footer.pug
+    script(src='static/lib/js/main.min.js')
