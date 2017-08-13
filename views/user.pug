@@ -5,7 +5,11 @@ block content
     .cover
       .banner-shadow
       .banner-cover
-    img.contact-img(src='https://s3.amazonaws.com/'+usuario.bucket+'/'+usuario.avatar alt="")
+    if usuario
+      img.contact-img(src='https://s3.amazonaws.com/'+usuario.bucket+'/'+usuario.avatar alt=usuario.name)
+    else
+      img.contact-img(src='/static/source/images/default.png')
+
     .contact-detail.container
       .row
         .col-md-6
@@ -16,5 +20,8 @@ block content
             span.ion-android-call
             =usuario ? usuario.phone : 'Sin telefono'
         .col-md-6
-          p
-            | Hola, me gusta jugar al futbol y tambien me gusta la fotografia
+          if usuario
+            p
+              | Hola, me gusta jugar al futbol y tambien me gusta la fotografia
+          else
+            p Tienes que agregar un usuario primero
