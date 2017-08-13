@@ -46,6 +46,12 @@ gulp.task('setPublic', () => {
   .pipe(gulp.dest('public'));
 })
 
-gulp.task('default', () => {
+// Clean
+gulp.task('clean', function() {
+    console.log('uploads folder deleted')
+    return del(['uploads/'])
+});
+
+gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
