@@ -1,5 +1,7 @@
 body{
   background: #f5f8fa;
+  padding-top: 50px;
+  font-family: 'Poppins-Light', sans-serif;
 }
 .see-tag, .delete-tag{
   margin: 5px;
@@ -61,6 +63,7 @@ $cover-height: 300px;
   margin: 0;
   border-radius: 100px;
   width: 150px;
+  height: 150px;
   position: relative;
   top: -120px;
   z-index: 10;

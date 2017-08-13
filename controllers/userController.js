@@ -1,5 +1,6 @@
 const User = require('../models/user.js');
 
+
 // SHOW ALL
 exports.list_all = (req, res) => {
 	User.list_all(res);
@@ -12,7 +13,7 @@ exports.user_detail = (req, res) => {
 
 // CREATE
 exports.user_create_post = (req, res) => {
-  User.create(res, req.body.name, req.body.phone, req.body.avatar);
+  User.create(req, res);
 }
 
 // DELETE

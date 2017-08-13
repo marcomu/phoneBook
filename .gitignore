@@ -1,8 +1,10 @@
 node_modules
 .idea/
 public
-lib/js/**.map
-lib/js/**min*
-lib/stylesheets/**.map
-lib/stylesheets/**min*
-
+source/js/**.map
+source/js/**min*
+source/stylesheets/**.map
+source/stylesheets/**min*
+uploads
+source/stylesheets/main.css
+source/stylesheets/main.css.map

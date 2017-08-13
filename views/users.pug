@@ -6,7 +6,7 @@ block content
       h1.display-4 Directorio
   .row
     .col-md-4
-      form(action='/users', method='post')
+      form(action='/users', method='post' enctype="multipart/form-data")
         .form-group
           label(for='name') Nombre completo
           input#name.form-control(name='name' required placeholder='ejem: Elon Musk')
@@ -19,20 +19,22 @@ block content
         .form-group
           button.btn.btn-primary.btn-block(type='submit') Crear contacto
     .col-md-8
-      table.table
-        thead
-          tr
-            th #
-            th Nombre
-            th Telefono
-            th Acciones
-        tbody
-          each contacto in usuarios
+      if usuarios
+        table.table
+          thead
             tr
-              th=contacto.id
-              td=contacto.name
-              td=contacto.phone
-              td
-                a.see-tag(href='/users/'+contacto.id) Ver
-                a.delete-tag(href='/users/'+contacto.id+'/delete') Eliminar
-                
+              th #
+              th Nombre
+              th Telefono
+              th Acciones
+          tbody
+            each contacto in usuarios
+              tr
+                th=contacto.id
+                td=contacto.name
+                td=contacto.phone
+                td
+                  a.see-tag(href='/users/'+contacto.id) Ver
+                  a.delete-tag(href='/users/'+contacto.id+'/delete') Eliminar
+      else
+        p Ingresa tu primer contacto
