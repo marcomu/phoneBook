@@ -1,0 +1,71 @@
+body {
+  background: #f5f8fa; }
+
+.see-tag, .delete-tag {
+  margin: 5px;
+  cursor: pointer; }
+
+.delete-tag, .see-tag {
+  font-size: 10px;
+  background: #d9534f;
+  padding: 6px;
+  border-radius: 4px;
+  height: 10px;
+  color: white; }
+  .delete-tag:hover, .see-tag:hover {
+    color: white; }
+
+.see-tag {
+  background: #5bc0de; }
+
+.contact-info {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin: 30px auto 100px;
+  height: 450px;
+  width: 600px;
+  background: white; }
+
+.cover {
+  height: 300px;
+  position: relative; }
+
+.banner-shadow {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(to bottom, transparent 60%, white 90%);
+  height: 300px;
+  z-index: 10;
+  width: 100%; }
+
+.banner-cover {
+  background: url("/static/source/images/background.jpg") center center no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  position: absolute; }
+
+.contact-name {
+  font: 14px;
+  color: #292b2c;
+  font-weight: 600;
+  margin: 0; }
+  .contact-name span {
+    margin: 0 10px; }
+
+.contact-img {
+  margin: 0;
+  border-radius: 100px;
+  width: 150px;
+  position: relative;
+  top: -120px;
+  z-index: 10; }
+
+.contact-phone span {
+  margin: 0 10px; }
+
+.contact-detail {
+  position: relative;
+  top: -90px;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=main.css.map */

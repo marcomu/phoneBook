@@ -1,20 +1,38 @@
 extends layout.pug
 
 block content
-  h1 Lista de todo el directorio
-  each contacto in usuarios
-    div
-      span=contacto.id
-      span=contacto.name
-      span=contacto.phone
-      span=contacto.avatar
-      a(href='/users/'+contacto.id) Ver
-      a(href='/users/'+contacto.id+'/delete') Eliminar
-  form(action='/users', method='post')
-    label Nombre de usuario
-      input(name='name')
-    label Telefono
-      input(name='phone')
-    label Avatar
-      input(type='file' name='avatar')
-    button(type='submit') Crear contacto
+  .row
+    .col-md-12
+      h1.display-4 Directorio
+  .row
+    .col-md-4
+      form(action='/users', method='post')
+        .form-group
+          label(for='name') Nombre completo
+          input#name.form-control(name='name' required placeholder='ejem: Elon Musk')
+        .form-group
+          label(for='phone') Telefono
+          input#phone.form-control(type='number' name='phone' required placeholder='(55) 55 43 42 56')
+        .form-group
+          label(for='avatar') Avatar
+          input#avatar.form-control-file(type='file' name='avatar')
+        .form-group
+          button.btn.btn-primary.btn-block(type='submit') Crear contacto
+    .col-md-8
+      table.table
+        thead
+          tr
+            th #
+            th Nombre
+            th Telefono
+            th Acciones
+        tbody
+          each contacto in usuarios
+            tr
+              th=contacto.id
+              td=contacto.name
+              td=contacto.phone
+              td
+                a.see-tag(href='/users/'+contacto.id) Ver
+                a.delete-tag(href='/users/'+contacto.id+'/delete') Eliminar
+                

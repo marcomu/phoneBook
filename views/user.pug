@@ -1,8 +1,20 @@
 extends layout.pug
 
 block content
-  h1 USUARIO
-  if usuario
-    p=usuario.name
-    p=usuario.phone
-    p=usuario.avatar
+  .contact-info.text-center
+    .cover
+      .banner-shadow
+      .banner-cover
+    img.contact-img(src="/static/source/images/avatar.png", alt="")
+    .contact-detail.container
+      .row
+        .col-md-6
+          p.contact-name
+            span.ion-ios-person
+            =usuario ? usuario.name : 'No se encontro usuario'
+          p.contact-phone
+            span.ion-android-call
+            =usuario ? usuario.phone : 'Sin telefono'
+        .col-md-6
+          p
+            | Hola, me gusta jugar al futbol y tambien me gusta la fotografia
