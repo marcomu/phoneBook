@@ -19,3 +19,6 @@ aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
 
 - schema.sql
 - db.js (Change db configuration of own mysql info)
+
+# Run server
+node app.js
