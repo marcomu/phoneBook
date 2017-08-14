@@ -15,11 +15,18 @@ block content
           .media-body
             h1
               =usuario ? usuario.name : 'No se encontro usuario'
-              small.display-block=usuario ? usuario.phone : 'Sin telefono'
+              small.display-block Lead Developer
     .content
       .panel.panel-flat
         .panel-heading
-          h5.panel-title=usuario.name
+          h5.panel-title
+            =usuario ? usuario.name : 'Usuario no encontrado'
+            small.display-block
+              | Correo: 
+              =usuario ? usuario.email : 'Sin correo'
+            small.display-block
+              | Telefono: 
+              =usuario ? usuario.phone : 'Sin telefono'
           .heading-elements
             ul.icons-list
               li

@@ -20,8 +20,8 @@ exports.list_all = (res) => {
 exports.create = (req, res) => {
   const avatar = req.file;
   const bucketName = uuid.v4();
-  const values = [req.body.name, req.body.phone, avatar.originalname, bucketName];
-  db.query('INSERT INTO user (name, phone, avatar, bucket) VALUES(?, ?, ?, ?)', values,(err, result) => {
+  const values = [req.body.name, req.body.email, req.body.phone, avatar.originalname, bucketName];
+  db.query('INSERT INTO user (name, email, phone, avatar, bucket) VALUES(?, ?, ?, ?, ?)', values,(err, result) => {
     if(err) return done(err);
 
     // Nombrando bucket y avatar
