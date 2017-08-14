@@ -1,16 +1,39 @@
 extends layout.pug
 
 block content
-  .profile-cover
-    .profile-cover-img(style='background-image: url(/static/source/images/background.jpg)')
-    .media
-      .media-left
-        a.profile-thumb(href='#')
-          if usuario
-            img.img-circle.img-md(src='https://s3.amazonaws.com/'+usuario.bucket+'/'+usuario.avatar alt=usuario.name)
-          else
-            img.img-circle.img-md(src='/static/source/images/default.png')
-      .media-body
-        h1
-          =usuario ? usuario.name : 'No se encontro usuario'
-          small.display-block=usuario ? usuario.phone : 'Sin telefono'
+  .content-wrapper
+    .page-header.page-header-default
+      .profile-cover
+        .profile-cover-img(style='background-image: url(/static/source/images/background.jpg)')
+        .media
+          .media-left
+            a.profile-thumb(href='#')
+              if usuario
+                img.img-circle.img-md(src='https://s3.amazonaws.com/'+usuario.bucket+'/'+usuario.avatar alt=usuario.name)
+              else
+                img.img-circle.img-md(src='/static/source/images/default.png')
+          .media-body
+            h1
+              =usuario ? usuario.name : 'No se encontro usuario'
+              small.display-block=usuario ? usuario.phone : 'Sin telefono'
+    .content
+      .panel.panel-flat
+        .panel-heading
+          h5.panel-title=usuario.name
+          .heading-elements
+            ul.icons-list
+              li
+                a(data-action='collapse')
+              li
+                a(data-action='close')
+        .panel-body
+          h6.text-semibold Informacion del usuario
+          p.content-group
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ut quasi perferendis aut, commodi obcaecati non autem iste doloremque aliquam velit, ipsam ipsa voluptatum consequuntur sint natus doloribus culpa! Nisi!
+          h6.text-semibold Mas informacion
+          p.content-group
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus corporis minima vero expedita atque consequatur voluptates dolore? Cupiditate accusamus, nesciunt totam culpa explicabo vitae distinctio voluptates debitis odio! Ut, quaerat.
+          h6.text-semibold Mas informacion
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quidem aut impedit excepturi. Porro sit a, pariatur deserunt officia officiis ratione expedita aspernatur maiores provident. Magnam soluta ducimus nesciunt iste, facere asperiores, corrupti. At culpa vero distinctio voluptate, nulla sunt sint quaerat modi ex cum quod, quibusdam fugit blanditiis enim reprehenderit veniam non vel reiciendis tenetur. Tempora fuga quis repudiandae illum sapiente esse aperiam laudantium neque, eaque tenetur numquam dolore earum, aut fugiat maxime ad cumque inventore illo debitis? Consequatur, asperiores, laudantium! Nihil quidem asperiores ipsam minima fuga cumque error corporis. Sunt dignissimos recusandae eligendi distinctio quisquam tenetur amet, suscipit corporis soluta nostrum quidem? Sunt voluptate, ullam eaque fugit ipsum veniam in. Quod porro alias laboriosam rerum nihil exercitationem quas molestiae ex vero eos tenetur, eligendi rem cupiditate ratione est laudantium recusandae sequi quo odit ducimus non perspiciatis reprehenderit. Voluptatibus veniam qui, beatae repellendus voluptas harum! Sint quis natus iusto velit consequatur dicta voluptate optio, quasi vero pariatur amet et soluta, sed perspiciatis at, sequi explicabo. Culpa dolor atque eius, minima labore inventore eveniet eos numquam exercitationem explicabo, repellendus magnam, pariatur debitis. At delectus perspiciatis nam libero omnis, illum totam, aliquid dicta veritatis perferendis eligendi expedita quis dolorem vitae error!
+
