@@ -5,10 +5,6 @@ Phone book that registers and lists users. Node + MySQL + Express
 ```
 gulp
 ```
-## Watch dev files
-```
-gulp serve
-```
 ## AMAZON S3
 
 Create a file ~/.aws/credentials with the following content:
