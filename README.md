@@ -4,7 +4,7 @@ Phone book that registers and lists users. Node + MySQL + Express
 ## Compile scss and js
 gulp
 
-## Dev watch files
+## Watch dev files
 gulp serve
 
 ## AMAZON S3
