@@ -15,3 +15,7 @@ Create a file ~/.aws/credentials with the following content:
 aws_access_key_id = YOUR_ACCESS_KEY_ID
 aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
 
+## MySQL SCHEMA and DB config
+
+- schema.sql
+- db.js (Change db configuration of own mysql info)
