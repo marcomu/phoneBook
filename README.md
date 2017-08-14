@@ -2,11 +2,13 @@
 Phone book that registers and lists users. Node + MySQL + Express
 
 ## Compile scss and js
+```
 gulp
-
+```
 ## Watch dev files
+```
 gulp serve
-
+```
 ## AMAZON S3
 
 Create a file ~/.aws/credentials with the following content:
@@ -21,4 +23,6 @@ aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
 - db.js (Change db configuration of own mysql info)
 
 # Run server
+```
 node app.js
+```
