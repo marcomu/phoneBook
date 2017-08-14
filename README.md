@@ -10,11 +10,11 @@ gulp serve
 ## AMAZON S3
 
 Create a file ~/.aws/credentials with the following content:
-
+```
 [default]
 aws_access_key_id = YOUR_ACCESS_KEY_ID
 aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
-
+```
 ## MySQL SCHEMA and DB config
 
 - schema.sql
