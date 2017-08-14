@@ -1,5 +1,44 @@
 extends layout.pug
 
 block content
-	h1 Directorio Telefonico
-	p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ullam temporibus vitae, dignissimos. Ratione aliquam provident, mollitia dolorem accusantium error sapiente voluptas ea rem maxime pariatur libero repellendus velit numquam!
+  .content-wrapper
+    .content
+      .row
+        .col-md-12
+          .panel
+            .panel-body.text-center
+              h4.text-center.content-group-lg
+                | CodeChallenge
+                small.display-block
+                  | Directorio telefonico
+              .icon-object.border-success.text-success
+                i.icon-racing
+      .row
+        .col-md-12
+          .panel.panel-body.border-top-warning
+            h5.text-semibold Instrucciones
+
+            ul.list-feed.list-feed-square
+              li
+                | Capturar en un formulario: nombre, email, teléfono y foto de una persona.
+              li
+                | Mostrat en un listado la agenda misma donde se muestra una foto miniatura y el nombre.
+              li
+                | Al dar clic en el contacto, te manda a los detalles del contacto.
+      .row
+        .col-md-12
+          .panel.panel-body.border-top-warning
+            h5.text-semibold Stack BACK
+            ul.list-feed.list-feed-square
+              li Node
+              li Express
+              li S3 para almacenar imágenes
+              li ES6
+      .row
+        .col-md-12
+          .panel.panel-body.border-top-warning
+            h5.text-semibold Stack FRONT
+            ul.list-feed.list-feed-square
+              li Vanilla JS, JQuery, etc..
+              li ES6, Babel, Bootstrap, templates, etc...
+      
