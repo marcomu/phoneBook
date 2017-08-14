@@ -45,6 +45,11 @@ block content
     if usuarios
       .content
         .row
+          .alert.alert-primary.alert-styled-left
+            button.close(type='button', data-dismiss='alert')
+              span ×
+              span.sr-only Close
+            | Las imagenes en S3 tardan en cargar, al principio puede que no aparezca la imagen en el fondo del thumbnail, actualizar despues de 30 segundos.
           each contacto in usuarios
             .col-lg-3.col-md-6
               .thumbnail.no-padding
@@ -61,5 +66,11 @@ block content
                   ul.icons-list.mt-15
                     li
                       a(href='/users/'+contacto.id+'/delete' data-popup='tooltip' title='Eliminar contacto' data-container='body')
-                        | Eliminar contacto
-                        i.icon-cross3
+                        span.label.bg-danger-400 Eliminar contacto
+    else
+      .content
+        .alert.alert-warning.alert-styled-left
+          button.close(type='button', data-dismiss='alert')
+            span ×
+            span.sr-only Close
+          | Actualmente no tienes ningun contacto
