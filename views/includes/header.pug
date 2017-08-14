@@ -1,5 +1,26 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  a.navbar-brand(href='/') CodeChallenge
-#v-pills-tab.nav.flex-column.nav-pills(role='tablist')
-  a.nav-link( href='/', role='tab', aria-expanded='true') Home
-  a.nav-link( href='/users', role='tab', aria-expanded='true') Directorio
+.sidebar.sidebar-main
+  .sidebar-content
+    .sidebar-user
+      .category-content
+        .media
+          a.media-left(href='/')
+            img.img-circle.img-sm(src='/static/source/images/placeholder.jpg', alt='')
+          .media-body
+            span.media-heading.text-semibold CodeChallenge
+            .text-size-mini.text-muted
+              i.icon-pin.text-size-small
+              |   Mexico, City
+    .sidebar-category.sidebar-category-visible
+      .category-content.no-padding
+        ul.navigation.navigation-main.navigation-accordion
+          li.navigation-header
+            span Menu
+            i.icon-menu(title='Phone Book')
+          li
+            a(href='/')
+              i.icon-home4
+              span Dashboard
+          li
+            a(href='/users')
+              i.icon-stack2
+              span Phone Book

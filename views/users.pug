@@ -1,41 +1,57 @@
 extends layout.pug
 
 block content
-  .row
-    .col-md-12
-      h1.display-4 Directorio
-  .row
-    .col-md-4
-      form(action='/users', method='post' enctype="multipart/form-data")
-        .form-group
-          label(for='name') Nombre completo
-          input#name.form-control(name='name' required placeholder='ejem: Elon Musk')
-        .form-group
-          label(for='phone') Telefono
-          input#phone.form-control(type='number' name='phone' required placeholder='(55) 55 43 42 56')
-        .form-group
-          label(for='avatar') Avatar
-          input#avatar.form-control-file(type='file' name='avatar')
-          span Medidas ideales: 150 x 150 px
-        .form-group
-          button.btn.btn-primary.btn-block(type='submit') Crear contacto
-    .col-md-8
-      if usuarios
-        table.table
-          thead
+  form(action='/users', method='post' enctype="multipart/form-data")
+    .form-group
+      label(for='name') Nombre completo
+      input#name.form-control(name='name' required placeholder='ejem: Elon Musk')
+    .form-group
+      label(for='phone') Telefono
+      input#phone.form-control(type='number' name='phone' required placeholder='(55) 55 43 42 56')
+    .form-group
+      label(for='avatar') Avatar
+      input#avatar.form-control-file(type='file' name='avatar')
+      span Medidas ideales: 150 x 150 px
+    .form-group
+      button.btn.btn-primary.btn-block(type='submit') Crear contacto
+  if usuarios
+    .content
+      .row
+        each contacto in usuarios
+          .col-lg-3.col-md-6
+            .thumbnail.no-padding
+              .thumb
+                img.img-thumb(src='https://s3.amazonaws.com/'+contacto.bucket+'/'+contacto.avatar alt=contacto.name)
+                .caption-overflow
+                  span
+                    a.btn.bg-success-400.btn-icon.btn-xs(href='/users/'+contacto.id)
+                      i.icon-link
+              .caption.text-center
+                h6.text-semibold.no-margin
+                  =contacto.name
+                  small.display-block=contacto.phone
+                ul.icons-list.mt-15
+                  li
+                    a(href='/users/'+contacto.id+'/delete' data-popup='tooltip' title='Eliminar contacto' data-container='body')
+                      | Eliminar contacto
+                      i.icon-cross3
+  .col-md-9
+    if usuarios
+      table.table
+        thead
+          tr
+            th #
+            th Nombre
+            th Telefono
+            th Acciones
+        tbody
+          each contacto in usuarios
             tr
-              th #
-              th Nombre
-              th Telefono
-              th Acciones
-          tbody
-            each contacto in usuarios
-              tr
-                th=contacto.id
-                td=contacto.name
-                td=contacto.phone
-                td
-                  a.see-tag(href='/users/'+contacto.id) Ver
-                  a.delete-tag(href='/users/'+contacto.id+'/delete') Eliminar
-      else
-        p Ingresa tu primer contacto
+              th=contacto.id
+              td=contacto.name
+              td=contacto.phone
+              td
+                a.see-tag(href='/users/'+contacto.id) Ver
+                a.delete-tag(href='/users/'+contacto.id+'/delete') Eliminar
+    else
+      p Ingresa tu primer contacto

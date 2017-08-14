@@ -1,27 +1,16 @@
 extends layout.pug
 
 block content
-  .contact-info.text-center
-    .cover
-      .banner-shadow
-      .banner-cover
-    if usuario
-      img.contact-img(src='https://s3.amazonaws.com/'+usuario.bucket+'/'+usuario.avatar alt=usuario.name)
-    else
-      img.contact-img(src='/static/source/images/default.png')
-
-    .contact-detail.container
-      .row
-        .col-md-6
-          p.contact-name
-            span.ion-ios-person
-            =usuario ? usuario.name : 'No se encontro usuario'
-          p.contact-phone
-            span.ion-android-call
-            =usuario ? usuario.phone : 'Sin telefono'
-        .col-md-6
+  .profile-cover
+    .profile-cover-img(style='background-image: url(/static/source/images/background.jpg)')
+    .media
+      .media-left
+        a.profile-thumb(href='#')
           if usuario
-            p
-              | Hola, me gusta jugar al futbol y tambien me gusta la fotografia
+            img.img-circle.img-md(src='https://s3.amazonaws.com/'+usuario.bucket+'/'+usuario.avatar alt=usuario.name)
           else
-            p Tienes que agregar un usuario primero
+            img.img-circle.img-md(src='/static/source/images/default.png')
+      .media-body
+        h1
+          =usuario ? usuario.name : 'No se encontro usuario'
+          small.display-block=usuario ? usuario.phone : 'Sin telefono'

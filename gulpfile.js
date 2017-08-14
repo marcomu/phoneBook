@@ -25,7 +25,7 @@ gulp.task('minifyJs', ['concatScripts'], () => {
 });
 
 gulp.task('compileSass', () => {
-  return gulp.src('source/scss/main.scss')
+  return gulp.src(['source/scss/main.scss', 'source/scss/overrides.scss'])
   .pipe(maps.init())
   .pipe(sass())
   .pipe(maps.write('./'))
@@ -42,7 +42,7 @@ gulp.task('build', ['minifyJs', 'compileSass'], () => {
 });
 
 gulp.task('setPublic', () => {
-  return gulp.src(['source/js/main.min.js', 'source/stylesheets/main.css'], {base: './'})
+  return gulp.src(['source/js/main.min.js', 'source/stylesheets/main.css', 'source/stylesheets/overrides.css'], {base: './'})
   .pipe(gulp.dest('public'));
 })
 
