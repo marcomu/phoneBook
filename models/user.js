@@ -35,10 +35,10 @@ exports.create = (req, res) => {
           console.log(err)
         else
           console.log("Imagen subida a S3 en: " + bucketName);
+          return res.redirect('/users');
       });
     });
 
-    return res.redirect('/users');
   });
 }
 
